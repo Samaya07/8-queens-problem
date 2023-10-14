@@ -10,7 +10,7 @@ class Make_node:
                 if self.state[j][i]==1:
                     queen_pos.append([j,i])
         h=0
-        for i in range(7):
+        for i in range(7): ##calculating the number of attacking pairs
             x0=queen_pos[i][0]
             y0=queen_pos[i][1]
 
@@ -46,7 +46,7 @@ def hill_climbing(initial_state):
     print("The heuristic value of the initial state = ",current.value)
     while(True):
         neighbor=children(current)
-        if neighbor.value>=current.value:
+        if neighbor.value>=current.value: ##if the successor has a higher value(more number of attacking pairs), the search is cut off and the current node is returned
             return current
         current=neighbor
 
