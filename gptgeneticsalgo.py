@@ -23,15 +23,6 @@ def random_selection(population, fitness_fn):
         cumulative_weight += weight
         if cumulative_weight > rand_num:
             return ind
-    #fitness_values=[fitness_fn(ind) for ind in population]
-    #total_sum=sum(fitness_values)
-    #prob_values=[]
-    #for values in fitness_values:
-    #    prob_values.append(values/total_sum)
-    #n=len(population)
-    #index_list=[i for i in range(n)]
-    #selected_index=np.random.choice(index_list,p=prob_values)
-    #return population[selected_index]
 
 def reproduce(x, y):
     # Create a child by combining the genes of two parents (queens positions)
@@ -70,7 +61,7 @@ def genetic_algorithm(population, fitness_fn):
             print(fitness_fn(best_individual))
             return best_individual
 
-# Initialize the population with random queen positions
+# Initialize the population with 100 random queen positions
 initial_population = [[random.randint(0, size - 1) for i in range(size)] for j in range(100)]
 
 # Solve the 8-queens problem using the genetic algorithm
